@@ -1,13 +1,13 @@
-Welcome to rivt user documentation
-===================================
+Welcome to *rivt* user documentation
+======================================
 
-rivt is an open source software stack for systematically writing engineering
+*rivt* is an open source software stack for systematically writing engineering
 calculations. The calculation input file is written in rivtText which is
 designed to be easily to read, templated and shared through version control
 ssytems e.g. GitHub.  Its power and stabilty come from the underlying Python
 libraries that it wraps - docutils, numpy, sympy, matplotlib and pandas.
 
-rivtText is processed by rivtcalc, a Python package. The rivtcalc API
+*rivtText* is processed by the Python package *rivtcalc*. The rivtcalc API
 exposes five methods: R(r-rs), I(i-rs), V(v-rs), T(t-rs), X(rs); where rs
 represents a rivtText string. In interactive mode (e.g. in the IDE VSCode)
 each API method can be treated as a cell (#%%) and evaluated interactively,
@@ -46,7 +46,7 @@ Tables  T(rs)   Python simple statements, plus the I and V commands
 Exclude X(rs)   exclude evaluation - for debugging and review
 ======= ======= =========================================================== 
 
-** === line tags (user text in parenthesis)**
+**Line tags** (user text in parenthesis)
 
 =========================== ==============================================
 tag                          description 
@@ -67,7 +67,7 @@ tag                          description
 [page]_                      new page (PDF) 
 =========================== ==============================================
 
-** === block tags**
+**Block tags**
 
 ================  ===================================================== 
 tag                          description 
