@@ -1,104 +1,104 @@
 Welcome to rivt user documentation
 ===================================
 
-    rivt is an open source software stack for systematically writing engineering
-    calculations. The calculation input file is written in rivtText which is
-    designed to be easily to read, templated and shared through version control
-    ssytems e.g. GitHub.  Its power and stabilty come from the underlying Python
-    libraries that it wraps - docutils, numpy, sympy, matplotlib and pandas.
-    
-    rivtText is processed by rivtcalc, a Python package. The rivtcalc API
-    exposes five methods: R(r-rs), I(i-rs), V(v-rs), T(t-rs), X(rs); where rs
-    represents a rivtText string. In interactive mode (e.g. in the IDE VSCode)
-    each API method can be treated as a cell (#%%) and evaluated interactively,
-    producing utf8 text output. In file mode the rivtText calculation (calc) is
-    written to disk as formatted text (utf8) and optionally as a doc or html
-    (PDF or HTML). Doc calcs may include private project-specific information
-    and potentially copyrighted images that are sourced from unshared folders.
-    In contrast, text calcs and rivt input files are generic and shareable under the
-    MIT open source license.
-    
-    rivtText generates it's own calculation output through equations and
-    functions, and can incorporate output from other engineering software.
-    External sources can be automatically inserted as PDFs, images, text, LaTeX
-    and tables. rivtcalc output is a formatted calc file organized in sections.
-    Report calcs are assembled from multiple doc calcs with page headings, cover
-    and table of contents 
-    
-    rivtText wraps the reStructuredText (reST) language and native Python code
-    and adds a dozen unique commands and tags for simplification and
-    readability. Commands generally integrate external files into a calc and are
-    triggered with || at the beginning of a line. Tags format output and are
-    triggered by [tag]_ or [tag]__ (double underscore) at the end of a line,
-    depending on whether a single line or a block of lines are formatted. Within
-    a v-rs (values string), the = sign is the command that triggers evaluation
-    of an equation.
+rivt is an open source software stack for systematically writing engineering
+calculations. The calculation input file is written in rivtText which is
+designed to be easily to read, templated and shared through version control
+ssytems e.g. GitHub.  Its power and stabilty come from the underlying Python
+libraries that it wraps - docutils, numpy, sympy, matplotlib and pandas.
 
-    **API methods**
-    
-    type    method             content and commands
-    ======= =================================================================== 
-    Repo    R(rs)   any text, ||output, ||project, ||search, ||append 
-    Insert  I(rs)   any text, ||text, ||tables, ||image 
-    Values  V(rs)   text, =,  ||values, ||lists, ||import, plus the I commands 
-    Tables  T(rs)   Python simple statements, plus the I and V commands
-    Exclude X(rs)   exclude evaluation - for debugging and review
+rivtText is processed by rivtcalc, a Python package. The rivtcalc API
+exposes five methods: R(r-rs), I(i-rs), V(v-rs), T(t-rs), X(rs); where rs
+represents a rivtText string. In interactive mode (e.g. in the IDE VSCode)
+each API method can be treated as a cell (#%%) and evaluated interactively,
+producing utf8 text output. In file mode the rivtText calculation (calc) is
+written to disk as formatted text (utf8) and optionally as a doc or html
+(PDF or HTML). Doc calcs may include private project-specific information
+and potentially copyrighted images that are sourced from unshared folders.
+In contrast, text calcs and rivt input files are generic and shareable under the
+MIT open source license.
 
-    *tags*
+rivtText generates it's own calculation output through equations and
+functions, and can incorporate output from other engineering software.
+External sources can be automatically inserted as PDFs, images, text, LaTeX
+and tables. rivtcalc output is a formatted calc file organized in sections.
+Report calcs are assembled from multiple doc calcs with page headings, cover
+and table of contents 
 
-    tags - line               description (user calc input in parenthesis)
-    =========================== ==============================================
-    (description) [n]_          : section description and autonumber 
-    (descrip)(|n,n|sub;no) [e]_ : equation description, autonumber,format
-    (title) [t]_                : table title and autonumber 
-    (caption) [f]_              : figure caption and autonumber
-    (sympy eq) [s]_             : format sympy equation 
-    (latex eq) [x]_             : format LaTeX equation 
-    (text) [r]_                 : right justify text 
-    (text) [c]_                 : center text
-    (text) [l]_                 : left justify text (default)
-    (text) [#]_                 : footnote autonumber 
-    (footnote) [foot]_          : footnote description, placed at end of string
-    (http://url label) [link]_  : active url with optional label 
-    [line]_                     : horizontal line - width of page
-    [page]_                     : new page (PDF) 
+rivtText wraps the reStructuredText (reST) language and native Python code
+and adds a dozen unique commands and tags for simplification and
+readability. Commands generally integrate external files into a calc and are
+triggered with || at the beginning of a line. Tags format output and are
+triggered by [tag]_ or [tag]__ (double underscore) at the end of a line,
+depending on whether a single line or a block of lines are formatted. Within
+a v-rs (values string), the = sign is the command that triggers evaluation
+of an equation.
 
-    tags - block                          description 
-    ================  ===================================================== 
-    (text) [r]__         : right justify text block 
-    (text) [c]__         : center text block
-    (text) [l]__         : left justify text block 
-    [literal]__          : literal block 
-    [latex]__            : LaTeX block 
-    [math]__             : math block
+**API methods**
 
-    rivt calcs and supporting files are stored in a specific rivt project folder
-    structure designed to simplify file exchange. The three top level folders
-    are named calcs, docs, and files (calcs and docs folders are reviewed here).
-    The folders can be subfolders of any other folder but must be kept together.
-    The calcs folder contains the complete calculation report structure in
-    rivtText and other text files and is designed to be publically shared and
-    version controlled on a software development platform like Github. Files
-    included in the calcs folder include rivtText, LaTex, tables, data,
-    equations and functions.
+type    method             content and commands
+======= =================================================================== 
+Repo    R(rs)   any text, ||output, ||project, ||search, ||append 
+Insert  I(rs)   any text, ||text, ||tables, ||image 
+Values  V(rs)   text, =,  ||values, ||lists, ||import, plus the I commands 
+Tables  T(rs)   Python simple statements, plus the I and V commands
+Exclude X(rs)   exclude evaluation - for debugging and review
 
-    Each rivt filename begins with the letter c and a four digit calc number:
-    
-    cddnn_filename.py
+*tags*
 
-    where dd is the division number, nn is the rivt file number within the
-    division and cddnn together is the calc number. Within each rivt file
-    sections may be further defined. Each division with its and supporting files
-    is containted in a subfolder. The file and folder name suffixes, following
-    the number and underscore, is chosen by the user. When a rivt report is
-    generated, it is organized and formatted using the division, file and
-    section structure. 
-    
-    The entire calcs folder, containing a few component design files hundreds of
-    files desinging an entire building, is structured for public sharing and
-    editing as a template for related calcs.  rivtText files are Python (.py)
-    files start with a calc number. The associated rivt calc text file output
-    retains the same calc number and appends the .txt suffix.
+tags - line               description (user calc input in parenthesis)
+=========================== ==============================================
+(description) [n]_          : section description and autonumber 
+(descrip)(|n,n|sub;no) [e]_ : equation description, autonumber,format
+(title) [t]_                : table title and autonumber 
+(caption) [f]_              : figure caption and autonumber
+(sympy eq) [s]_             : format sympy equation 
+(latex eq) [x]_             : format LaTeX equation 
+(text) [r]_                 : right justify text 
+(text) [c]_                 : center text
+(text) [l]_                 : left justify text (default)
+(text) [#]_                 : footnote autonumber 
+(footnote) [foot]_          : footnote description, placed at end of string
+(http://url label) [link]_  : active url with optional label 
+[line]_                     : horizontal line - width of page
+[page]_                     : new page (PDF) 
+
+tags - block                          description 
+================  ===================================================== 
+(text) [r]__         : right justify text block 
+(text) [c]__         : center text block
+(text) [l]__         : left justify text block 
+[literal]__          : literal block 
+[latex]__            : LaTeX block 
+[math]__             : math block
+
+rivt calcs and supporting files are stored in a specific rivt project folder
+structure designed to simplify file exchange. The three top level folders
+are named calcs, docs, and files (calcs and docs folders are reviewed here).
+The folders can be subfolders of any other folder but must be kept together.
+The calcs folder contains the complete calculation report structure in
+rivtText and other text files and is designed to be publically shared and
+version controlled on a software development platform like Github. Files
+included in the calcs folder include rivtText, LaTex, tables, data,
+equations and functions.
+
+Each rivt filename begins with the letter c and a four digit calc number:
+
+cddnn_filename.py
+
+where dd is the division number, nn is the rivt file number within the
+division and cddnn together is the calc number. Within each rivt file
+sections may be further defined. Each division with its and supporting files
+is containted in a subfolder. The file and folder name suffixes, following
+the number and underscore, is chosen by the user. When a rivt report is
+generated, it is organized and formatted using the division, file and
+section structure. 
+
+The entire calcs folder, containing a few component design files hundreds of
+files desinging an entire building, is structured for public sharing and
+editing as a template for related calcs.  rivtText files are Python (.py)
+files start with a calc number. The associated rivt calc text file output
+retains the same calc number and appends the .txt suffix.
 
     rivtproject_folder
         calcs
