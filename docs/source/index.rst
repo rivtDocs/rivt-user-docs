@@ -48,29 +48,31 @@ Exclude X(rs)   exclude evaluation - for debugging and review
 
 tags - line               description (user calc input in parenthesis)
 =========================== ==============================================
-(description) [n]_          : section description and autonumber 
-(descrip)(|n,n|sub;no) [e]_ : equation description, autonumber,format
-(title) [t]_                : table title and autonumber 
-(caption) [f]_              : figure caption and autonumber
-(sympy eq) [s]_             : format sympy equation 
-(latex eq) [x]_             : format LaTeX equation 
-(text) [r]_                 : right justify text 
-(text) [c]_                 : center text
-(text) [l]_                 : left justify text (default)
-(text) [#]_                 : footnote autonumber 
-(footnote) [foot]_          : footnote description, placed at end of string
-(http://url label) [link]_  : active url with optional label 
-[line]_                     : horizontal line - width of page
-[page]_                     : new page (PDF) 
+(description) [n]_           section description and autonumber 
+(descrip)(|n,n|sub;no) [e]_  equation description, autonumber,format
+(title) [t]_                 table title and autonumber 
+(caption) [f]_               figure caption and autonumber
+(sympy eq) [s]_              format sympy equation 
+(latex eq) [x]_              format LaTeX equation 
+(text) [r]_                  right justify text 
+(text) [c]_                  center text
+(text) [l]_                  left justify text (default)
+(text) [#]_                  footnote autonumber 
+(footnote) [foot]_           footnote description
+(http://url label) [link]_   active url with optional label 
+[line]_                      horizontal line - width of page
+[page]_                      new page (PDF) 
+=========================== ==============================================
 
 tags - block                          description 
 ================  ===================================================== 
-(text) [r]__         : right justify text block 
-(text) [c]__         : center text block
-(text) [l]__         : left justify text block 
-[literal]__          : literal block 
-[latex]__            : LaTeX block 
-[math]__             : math block
+(text) [r]__        right justify text block 
+(text) [c]__        center text block
+(text) [l]__        left justify text block 
+[literal]__         literal block 
+[latex]__           LaTeX block 
+[math]__            math block
+================  ===================================================== 
 
 rivt calcs and supporting files are stored in a specific rivt project folder
 structure designed to simplify file exchange. The three top level folders
