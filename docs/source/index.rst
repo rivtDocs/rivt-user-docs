@@ -34,7 +34,7 @@ Welcome to rivt user documentation
     a v-rs (values string), the = sign is the command that triggers evaluation
     of an equation.
 
-    API methods ----------------------------------------------------------------
+    **API methods**
     
     type    method             content and commands
     ======= =================================================================== 
@@ -44,23 +44,24 @@ Welcome to rivt user documentation
     Tables  T(rs)   Python simple statements, plus the I and V commands
     Exclude X(rs)   exclude evaluation - for debugging and review
 
-    tags ----------------------------------------------------------------------
+    *tags*
 
     tags - line               description (user calc input in parenthesis)
-    ===============  ==========================================================
-    (description) [n]_  : section description and autonumber 
-    (description) (|n,n|sub;nosub) [e]_ : equation description, autonumber,format
-    (title) [t]_        : table title and autonumber 
-    (caption) [f]_      : figure caption and autonumber
-    (sympy eq) [s]_     : format sympy equation (latex eq) [x]_ format LaTeX equation 
-    (text) [r]_         : right justify text 
-    (text) [c]_         : center text
-    (text) [l]_         : left justify text (default)
-    (text) [#]_         : footnote autonumber 
-    (footnote) [foot]_  : footnote description, placed at end of string
-    (http://url label) [link]_ : active url with optional label 
-    [line]_             : horizontal line - width of page
-    [page]_             : new page (PDF) 
+    =========================== ==============================================
+    (description) [n]_          : section description and autonumber 
+    (descrip)(|n,n|sub;no) [e]_ : equation description, autonumber,format
+    (title) [t]_                : table title and autonumber 
+    (caption) [f]_              : figure caption and autonumber
+    (sympy eq) [s]_             : format sympy equation 
+    (latex eq) [x]_             : format LaTeX equation 
+    (text) [r]_                 : right justify text 
+    (text) [c]_                 : center text
+    (text) [l]_                 : left justify text (default)
+    (text) [#]_                 : footnote autonumber 
+    (footnote) [foot]_          : footnote description, placed at end of string
+    (http://url label) [link]_  : active url with optional label 
+    [line]_                     : horizontal line - width of page
+    [page]_                     : new page (PDF) 
 
     tags - block                          description 
     ================  ===================================================== 
