@@ -34,19 +34,22 @@ depending on whether a single line or a block of lines are formatted. Within
 a v-rs (values string), the = sign is the command that triggers evaluation
 of an equation.
 
-**API methods**
+**API methods and commands**
 
+======= ======= =========================================================== 
 type    method             content and commands
-======= =================================================================== 
+======= ======= =========================================================== 
 Repo    R(rs)   any text, ||output, ||project, ||search, ||append 
 Insert  I(rs)   any text, ||text, ||tables, ||image 
 Values  V(rs)   text, =,  ||values, ||lists, ||import, plus the I commands 
 Tables  T(rs)   Python simple statements, plus the I and V commands
 Exclude X(rs)   exclude evaluation - for debugging and review
+======= ======= =========================================================== 
 
-*tags*
+** === line tags (user text in parenthesis)**
 
-tags - line               description (user calc input in parenthesis)
+=========================== ==============================================
+tag                          description 
 =========================== ==============================================
 (description) [n]_           section description and autonumber 
 (descrip)(|n,n|sub;no) [e]_  equation description, autonumber,format
@@ -64,7 +67,10 @@ tags - line               description (user calc input in parenthesis)
 [page]_                      new page (PDF) 
 =========================== ==============================================
 
-tags - block                          description 
+** === block tags**
+
+================  ===================================================== 
+tag                          description 
 ================  ===================================================== 
 (text) [r]__        right justify text block 
 (text) [c]__        center text block
