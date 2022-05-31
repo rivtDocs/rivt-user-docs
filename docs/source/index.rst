@@ -1,7 +1,7 @@
 Welcome to rivt user documentation
 ===================================
 
-    rivt is open source software for systematically writing engineering
+    rivt is an open source software stack for systematically writing engineering
     calculations. The calculation input file is written in rivtText which is
     designed to be easily to read, templated and shared through version control
     ssytems e.g. GitHub.  Its power and stabilty come from the underlying Python
